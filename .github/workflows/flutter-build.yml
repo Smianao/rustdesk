@@ -632,6 +632,9 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v4
+        
+      - name: Debug Environment Variable
+        run: echo "MACOS_P12_BASE64: ${{ env.MACOS_P12_BASE64 }}"
 
       - name: Import the codesign cert
         if: env.MACOS_P12_BASE64 != null
